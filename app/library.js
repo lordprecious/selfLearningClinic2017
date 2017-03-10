@@ -44,4 +44,17 @@ function maximum(l){
   return max;               //returns the maximum value in the list
 }
 
+file.fizzBuzz = function(n){
+  if(n % 5 === 0 && n % 3 === 0){  //condition to check if the input number is divisible by both 5 and 3;
+    return "FizzBuzz";
+  }else if(n % 5 === 0){       //condition to check if the input number is divisible by s;
+    return "Buzz";
+  }
+  else if(n % 3 === 0){        //condition to check if the input number is divisible by 3;
+    return "Fizz";
+  }else{
+    return n;            // return the number if it is neither divisible by neither 5 nor 3;
+  }
+}
+
 module.exports = file;
