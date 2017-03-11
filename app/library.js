@@ -57,4 +57,35 @@ file.fizzBuzz = function(n){
   }
 }
 
+
+//the aritGeo function that takes an aray as an input and checks if the array is a arithemetic progression, or a geometric progression or neither;
+file.aritGeo = function(arr) { 
+  
+  if(arr.length < 1) {      // checks if the length of the array is aless than one, if true, it returns 0;
+    return 0;
+  }
+  
+  var diff = arr[1] - arr[0];
+  var ratio = arr[1] / arr[0];
+
+  var arith = true;
+  var geo = true;
+
+  for(var i = 0; i < arr.length - 1; i++) {
+    if( arr[i + 1] - arr[i] !== diff )    //condition that checks if the array is an arithemetic progression or not
+        arith = false;
+    if(arr[i + 1] / ratio !== arr[i])     //condition that checks if the array is an geometric progression or not
+        geo = false;
+  }
+
+  if(arith === true)
+    return "Arithmetic";
+  else if(geo === true)
+    return "Geometric";
+  else
+    return -1;        //return -1 if its neither an arithemetic nor geometric progression;
+
+}
+
+
 module.exports = file;
