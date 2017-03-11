@@ -18,12 +18,20 @@ aritGeo = require('../app/library.js').aritGeo;
         expect(aritGeo([2, 4, 6, 8, 10])).toEqual('Arithmetic');
       });
 
+      it("should return `Arithmetic` for [-10, -9, -8, -7, -6, -5, -4]", function() {
+        expect(aritGeo([-10, -9, -8, -7, -6, -5, -4])).toEqual('Arithmetic');
+      });
+
       it("should return `Arithmetic` for [5, 11, 17, 23, 29, 35, 41]", function() {
         expect(aritGeo([5, 11, 17, 23, 29, 35, 41])).toEqual('Arithmetic');
       });
 
       it("should return `Arithmetic` for [15, 10, 5, 0, -5, -10]", function() {
         expect(aritGeo([15, 10, 5, 0, -5, -10])).toEqual('Arithmetic');
+      });
+
+      it("should return `Arithmetic` for [1, 2, 3, 4, 5, 6]", function() {
+        expect(aritGeo([1, 2, 3, 4, 5, 6])).toEqual('Arithmetic');
       });
 
     });
@@ -42,6 +50,10 @@ aritGeo = require('../app/library.js').aritGeo;
         expect(aritGeo([-128, 64, -32, 16, -8])).toEqual('Geometric');
       });
 
+      it("should return `Geometric` for [2, 4, 8, 16, 32]", function() {
+        expect(aritGeo([2, 4, 8, 16, 32])).toEqual('Geometric');
+      });
+
     });
 
     describe("Case for neither arithmetic nor geometric sequence", function() {
@@ -50,12 +62,20 @@ aritGeo = require('../app/library.js').aritGeo;
         expect(aritGeo([1, 2, 3, 5, 8])).toEqual(-1);
       });
 
+      it("should return -1 for [0, 2, 123, -200, 0, -56, 78]", function() {
+        expect(aritGeo([0, 2, 123, -200, 0, -56, 78])).toEqual(-1);
+      });
+
       it("should return -1 for [1, 3, 6, 10, 15]", function() {
         expect(aritGeo([1, 3, 6, 10, 15])).toEqual(-1);
       });
 
       it("should return -1 for [1, 8, 27, 64, 125]", function() {
         expect(aritGeo([1, 8, 27, 64, 125])).toEqual(-1);
+      });
+
+      it("should return -1 for [0, 13, -6, 0, 5]", function() {
+        expect(aritGeo([0, 13, -6, 0, 5])).toEqual(-1);
       });
       
     });
